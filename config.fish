@@ -41,5 +41,7 @@ fish_add_path /home/sudhir/.spicetify
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
+set -gx PATH $HOME/.duckdb/cli/latest $PATH
+
 # Ctrl+X Ctrl+E → edit command in nvim
 bind \cx\ce edit_command_buffer
