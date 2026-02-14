@@ -7,6 +7,8 @@ alias la='eza -a --color=always --group-directories-first --icons' # all files a
 alias ll='eza -l --color=always --group-directories-first --icons' # long format
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="eza -a | grep -e '^\.'" # show only dotfiles
+alias python='python3'
+alias update='brew update && brew upgrade && brew cleanup'
 
 if status is-interactive
     bind \eb tmux_sessionizer
@@ -49,3 +51,7 @@ set -gx PATH $HOME/.duckdb/cli/latest $PATH
 
 # Ctrl+X Ctrl+E → edit command in nvim
 bind \cx\ce edit_command_buffer
+
+starship init fish | source
+
+fish_add_path /Users/sudhir/.spicetify

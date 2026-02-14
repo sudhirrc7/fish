@@ -1,1 +1,1 @@
-source "/home/sudhir/.deno/env.fish"
+source "/Users/sudhir/.deno/env.fish"
