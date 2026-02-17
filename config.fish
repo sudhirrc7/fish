@@ -55,4 +55,8 @@ bind \cx\ce edit_command_buffer
 
 starship init fish | source
 
+# ${UserConfigDir}/fish/config.fish
+set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+carapace _carapace | source
+
 fish_add_path /Users/sudhir/.spicetify
