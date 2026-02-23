@@ -9,7 +9,7 @@ alias lt='eza -aT --color=always --group-directories-first --icons' # tree listi
 alias l.="eza -a | grep -e '^\.'" # show only dotfiles
 alias python='python3'
 alias update='brew update && brew upgrade && brew cleanup'
-alias bat ='cat'
+alias cat ='bat'
 
 if status is-interactive
     bind \eb tmux_sessionizer
