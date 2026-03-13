@@ -9,8 +9,8 @@ alias lt='eza -aT --color=always --group-directories-first --icons' # tree listi
 alias l.="eza -a | grep -e '^\.'" # show only dotfiles
 alias python='python3'
 alias update='brew update && brew upgrade && brew cleanup'
-alias cat ='bat'
-
+alias cat='bat'
+alias chad='NVIM_APPNAME=nvchad nvim'
 if status is-interactive
     bind \eb tmux_sessionizer
 end
@@ -31,6 +31,8 @@ end
 function fish_greeting
     # smth smth
 end
+
+fish_add_path /Users/sudhir/.local/share/nvim/mason/bin
 
 # Set up fzf key bindings
 fzf --fish | source
@@ -60,3 +62,6 @@ set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
 carapace _carapace | source
 
 fish_add_path /Users/sudhir/.spicetify
+
+# Created by `pipx` on 2026-03-04 15:27:21
+set PATH $PATH /Users/sudhir/.local/bin
