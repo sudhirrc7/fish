@@ -65,3 +65,7 @@ fish_add_path /Users/sudhir/.spicetify
 
 # Created by `pipx` on 2026-03-04 15:27:21
 set PATH $PATH /Users/sudhir/.local/bin
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
