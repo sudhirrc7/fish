@@ -6,7 +6,7 @@ alias ls='eza -al --color=always --group-directories-first --icons' # preferred 
 alias la='eza -a --color=always --group-directories-first --icons' # all files and dirs
 alias ll='eza -l --color=always --group-directories-first --icons' # long format
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
-alias l.="eza -a | grep -e '^\.'" # show only dotfiles
+alias l="eza -a | grep -e '^\.'" # show only dotfiles
 alias python='python3'
 alias update='brew update && brew upgrade && brew cleanup'
 alias cat='bat'
@@ -15,7 +15,13 @@ if status is-interactive
     bind \eb tmux_sessionizer
 end
 
-fish_add_path ~/.config/emacs/bin
+if status is-interactive
+    # Enable Vi keybinding
+    fish_vi_key_bindings
+    set fish_cursor_default block
+    set fish_cursor_insert line
+    set fish_vi_force_cursor
+end
 
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -58,7 +64,6 @@ bind \cx\ce edit_command_buffer
 starship init fish | source
 
 # ${UserConfigDir}/fish/config.fish
-set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
 carapace _carapace | source
 
 fish_add_path /Users/sudhir/.spicetify
