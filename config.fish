@@ -11,17 +11,18 @@ alias python='python3'
 alias update='brew update && brew upgrade && brew cleanup'
 alias cat='bat'
 alias chad='NVIM_APPNAME=nvchad nvim'
+alias agents='/Users/sudhir/.config/cmux/agents.sh'
 if status is-interactive
     bind \eb tmux_sessionizer
 end
 
-if status is-interactive
-    # Enable Vi keybinding
-    fish_vi_key_bindings
-    set fish_cursor_default block
-    set fish_cursor_insert line
-    set fish_vi_force_cursor
-end
+# if status is-interactive
+#     # Enable Vi keybinding
+#     fish_vi_key_bindings
+#     set fish_cursor_default block
+#     set fish_cursor_insert line
+#     set fish_vi_force_cursor
+# end
 
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -74,3 +75,11 @@ set PATH $PATH /Users/sudhir/.local/bin
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+alias g++ g++-15
+
+# pnpm
+set -gx PNPM_HOME /Users/sudhir/Library/pnpm
+if not string match -q -- "$PNPM_HOME/bin" $PATH
+    set -gx PATH "$PNPM_HOME/bin" $PATH
+end
+# pnpm end
