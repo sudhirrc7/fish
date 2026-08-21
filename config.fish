@@ -9,8 +9,8 @@ alias lt='eza -aT --color=always --group-directories-first --icons' # tree listi
 alias l="eza -a | grep -e '^\.'" # show only dotfiles
 alias python='python3'
 alias update='brew update && brew upgrade && brew cleanup'
-alias cat='bat'
-alias chad='NVIM_APPNAME=nvchad nvim'
+# alias cat='bat'
+# alias chad='NVIM_APPNAME=nvchad nvim'
 alias agents='/Users/sudhir/.config/cmux/agents.sh'
 if status is-interactive
     bind \eb tmux_sessionizer
@@ -83,3 +83,6 @@ if not string match -q -- "$PNPM_HOME/bin" $PATH
     set -gx PATH "$PNPM_HOME/bin" $PATH
 end
 # pnpm end
+
+# druk
+fish_add_path /Users/sudhir/.druk/bin
