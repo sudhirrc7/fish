@@ -9,6 +9,7 @@ alias lt='eza -aT --color=always --group-directories-first --icons' # tree listi
 alias l="eza -a | grep -e '^\.'" # show only dotfiles
 alias python='python3'
 alias update='brew update && brew upgrade && brew cleanup'
+alias g++ g++-16
 # alias cat='bat'
 # alias chad='NVIM_APPNAME=nvchad nvim'
 alias agents='/Users/sudhir/.config/cmux/agents.sh'
@@ -75,7 +76,6 @@ set PATH $PATH /Users/sudhir/.local/bin
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
-alias g++ g++-16
 
 # pnpm
 set -gx PNPM_HOME /Users/sudhir/Library/pnpm
