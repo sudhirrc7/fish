@@ -17,10 +17,9 @@ This repo is a personal fish shell config (`~/.config/fish`) on macOS (Apple Sil
 
 ## Things to know
 
-- The active prompt is **starship** (`starship init fish | source`). `functions/fish_prompt.fish`, `fish_right_prompt.fish` and `fish_mode_prompt.fish` are fully commented out. `conf.d/_tide_init.fish` and `completions/tide.fish` are leftovers from an uninstalled tide plugin.
+- The active prompt is **starship** (`starship init fish | source`). `functions/fish_prompt.fish`, `fish_right_prompt.fish` and `fish_mode_prompt.fish` are fully commented out.
 - carapace is intentionally disabled (it breaks fish's inline path autosuggestions) — don't re-enable it.
 - Vi key bindings are intentionally commented out.
-- Some paths are Linux leftovers (`/home/sudhir/...` for opencode, spicetify, and `completions/am.fish`); the macOS equivalents use `/Users/sudhir/...`.
 - Android SDK and FVM/Flutter caches live on an external SSD at `/Volumes/devssd`.
 - Keep the existing style: 4-space indentation, `fish_add_path` for new `PATH` entries, `set -gx` for exported vars.
 

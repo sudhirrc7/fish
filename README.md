@@ -6,7 +6,7 @@ Personal [fish shell](https://fishshell.com/) configuration for macOS (Apple Sil
 
 ```
 config.fish      # main config: aliases, functions, PATH, key bindings, tool init
-conf.d/          # snippets auto-sourced before config.fish (fzf, nvm, sdkman, deno, fvm, tide)
+conf.d/          # snippets auto-sourced before config.fish (fzf, nvm, sdkman, deno, fvm)
 functions/       # autoloaded functions (one function per file, named after the file)
 completions/     # tab completions (mostly plugin-installed or tool-generated)
 fish_plugins     # plugin list managed by fisher

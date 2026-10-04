@@ -69,11 +69,6 @@ fzf --fish | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# opencode
-fish_add_path /home/sudhir/.opencode/bin
-
-fish_add_path /home/sudhir/.spicetify
-
 # Use Neovim as command line editor
 set -gx EDITOR nvim
 set -gx VISUAL nvim
