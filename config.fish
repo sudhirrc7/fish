@@ -1,6 +1,9 @@
 zoxide init fish | source
 
 alias n='nvim'
+alias nvimc="nvim --clean"
+alias vi='~/Downloads/nvim-macos-arm64/bin/nvim'
+alias vic='~/Downloads/nvim-macos-arm64/bin/nvim --clean'
 alias cls='clear'
 alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
 alias la='eza -a --color=always --group-directories-first --icons' # all files and dirs
@@ -9,7 +12,8 @@ alias lt='eza -aT --color=always --group-directories-first --icons' # tree listi
 alias l="eza -a | grep -e '^\.'" # show only dotfiles
 alias python='python3'
 alias update='brew update && brew upgrade && brew cleanup'
-alias g++ g++-16
+alias g++='g++-16'
+
 # alias cat='bat'
 # alias chad='NVIM_APPNAME=nvchad nvim'
 alias agents='/Users/sudhir/.config/cmux/agents.sh'
@@ -24,6 +28,14 @@ end
 #     set fish_cursor_insert line
 #     set fish_vi_force_cursor
 # end
+
+function nvimfzf
+    nvim (fzf --preview='cat {}')
+end
+
+function hxfzf
+    hx (fzf --preview='cat {}')
+end
 
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -40,7 +52,15 @@ function fish_greeting
     # smth smth
 end
 
+set -gx ANDROID_HOME /Volumes/devssd/Android/sdk
+set -gx ANDROID_SDK_ROOT /Volumes/devssd/Android/sdk
+set -gx ANDROID_AVD_HOME /Volumes/devssd/Android/avd
+
+fish_add_path $ANDROID_HOME/emulator
+fish_add_path $ANDROID_HOME/platform-tools
+fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
 fish_add_path /Users/sudhir/.local/share/nvim/mason/bin
+fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # Set up fzf key bindings
 fzf --fish | source
@@ -66,7 +86,9 @@ bind \cx\ce edit_command_buffer
 starship init fish | source
 
 # ${UserConfigDir}/fish/config.fish
-carapace _carapace | source
+# disabled: carapace replaces fish's own completions for ~2000 commands (ls, nvim, cat, ...)
+# and breaks the inline path autosuggestions (e.g. `ls dow` -> `ls Downloads/`)
+# carapace _carapace | source
 
 fish_add_path /Users/sudhir/.spicetify
 
